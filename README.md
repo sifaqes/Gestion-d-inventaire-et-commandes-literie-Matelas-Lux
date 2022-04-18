@@ -24,6 +24,7 @@ e-mail
 Zs7@gcloud.ua.es
 Whatsapp +34658629772
 
+![image](https://user-images.githubusercontent.com/64240372/163823698-f09b33ad-5ac1-4cd8-83c0-e901523fb56b.png)
 
 
 # Gestión-inventario-y-pedidos-ropa-de-cama-Matelas-Lux
@@ -38,6 +39,7 @@ Email
 Zs7@gcloud.ua.es
 WhatsApp +34658629772
 
+![image](https://user-images.githubusercontent.com/64240372/163823759-e24407e7-1b68-45f9-a849-1bd97e9409e2.png)
 
 
 # ادارة المخزون وطلبات الفراش-ماتيلاس-لوكس
@@ -56,4 +58,8 @@ WhatsApp +34658629772
 
 الايمايل Zs7@gcloud.ua.es
 واتساب  +34658629772
+![image](https://user-images.githubusercontent.com/64240372/163823841-1206b35e-f1b6-4540-afe3-d74267bad5d9.png)
+![image](https://user-images.githubusercontent.com/64240372/163823951-3760fb27-6606-45a4-b1f5-a3bc5fbc307f.png)
+![image](https://user-images.githubusercontent.com/64240372/163824119-bd7f58db-c8cc-40a6-beb1-5483d8456d2f.png)
+
 
