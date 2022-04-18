@@ -1,0 +1,58 @@
+# Inventory-management-and-orders-bedding-Matelas-Lux
+Inventory management and bedding orders Matelas Lux
+
+This work is an order management website for a furniture store. It was programmed by siphax using php and mysql using bootstrap templates, css and language. JS.
+A security system has been introduced for the site so that the login is only made whenever a variable SESSION is made, in addition to that it contains 5 supervisors that can be increased, and each supervisor has different permissions from the other, in order to change them can be customized.
+Updates will be posted from time to time, the site is open source, but the database is not. Open source, if you are interested in developing the project contact me and I will be very happy to send the database.
+Elements have been included in Arabic, showing that Al-Mawfa is active in Algeria 
+
+Email :Zs7@gcloud.ua.es
+WhatsApp +34658629772
+
+
+
+# Gestion-d'inventaire-et-commandes-literie-Matelas-Lux
+Gestion d'inventaire et commandes literie Matelas Lux
+
+Ce travail est un site de gestion de commandes pour un magasin de meubles. Il a été programmé par siphax en utilisant php et mysql en utilisant des modèles de démarrage, css et langage. JS.
+Un système de sécurité a été introduit pour le site afin que la connexion ne se fasse qu'à chaque fois qu'une SESSION variable est créée, en plus de cela, il contient 5 superviseurs qui peuvent être augmentés, et chaque superviseur a des autorisations différentes de l'autre, afin de changer ils peuvent être personnalisés.
+Des mises à jour seront publiées de temps à autre, le site est open source, mais la base de données ne l'est pas. Open source, si vous êtes intéressé par le développement du projet, contactez-moi et je serai très heureux de vous envoyer la base de données.
+Des éléments ont été inclus en arabe, indiquant qu'Al-Mawfaa est actif en Algérie.
+
+e-mail
+Zs7@gcloud.ua.es
+Whatsapp +34658629772
+
+
+
+# Gestión-inventario-y-pedidos-ropa-de-cama-Matelas-Lux
+Gestión de inventario y pedidos de ropa de cama Matelas Lux
+
+Este trabajo es un sitio web de gestión de pedidos para una tienda de muebles. Fue programado por siphax usando php y mysql usando plantillas bootstrap, css y lenguaje. JS.
+Se ha introducido un sistema de seguridad para el sitio para que el ingreso solo se realice cada vez que se realice una SESIÓN variable, además de que contiene 5 supervisores que se pueden aumentar, y cada supervisor tiene permisos diferentes del otro, para poder cambiar se pueden personalizar.
+Las actualizaciones se publicarán de vez en cuando, el sitio es de código abierto, pero la base de datos no lo es. Código abierto, si está interesado en desarrollar el proyecto, contácteme y con mucho gusto le enviaré la base de datos.
+Se han incluido elementos en árabe, lo que indica que Al-Mawfaa está activo en Argelia.
+
+Email
+Zs7@gcloud.ua.es
+WhatsApp +34658629772
+
+
+
+# ادارة المخزون وطلبات الفراش-ماتيلاس-لوكس
+إدارة المخزون وطلبات الفراش ماتيلاس لوكس
+
+
+هاذا العمل هو عبارة عن موقع ادارة الطلبات لمتجر اثاث و مفروشات،. تم برمجته من طرف siphax عبر لغة php و mysql و مع استعمال قوالب bootstrap و لغة CSS و لغة. JS.
+
+تم ادخال نضام حماية 🛡 للموقع بحيث يتم تسجيل الدخول كلما تم فقط SESSION متغير،  بالاضافة انه يحتوي 5 مشرفين قابلة للزيادة و كل مشرف يملك صلاحيات مختلفة عن الاخر، من اجل تغييرها يمكن حسب الطلب.
+
+سيتم نشر التحديثات من وقت لاخر، الموقع مفتوح المصدر، لكن قاعدة البيانات ليست. مفتوحة المصدر، ان كنت مهتم بتطوير المشروع اتصل بي و ساكون جد مسرور بارسال قاعدة البيانات. 
+
+تم ادراج عناصر باللغة العربية نضرا ان الموفع ينشط في الجزائر.
+
+
+
+الايمايل Zs7@gcloud.ua.es
+واتساب  +34658629772
+
