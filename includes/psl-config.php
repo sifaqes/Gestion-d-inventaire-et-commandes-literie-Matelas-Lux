@@ -79,10 +79,7 @@ define("DEFAULT_ROLE", "member");
 define("SECURE", true);    // For development purposes only!!!!
 
 
-    /////////////////////////////////// DATABASE CONNECT////////////////////////////////////
 
-
-        
 
 
 
