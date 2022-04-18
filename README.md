@@ -1,6 +1,7 @@
+____________________________
 Config DATABASE:
-___________includes/psl-config.php
-
+URL: includes/psl-config.php
+____________________________
 
 # Inventory-management-and-orders-bedding-Matelas-Lux
 Inventory management and bedding orders Matelas Lux
