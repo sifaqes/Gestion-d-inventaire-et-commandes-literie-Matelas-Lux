@@ -20,6 +20,7 @@ WhatsApp +34658629772
 # Gestion-d'inventaire-et-commandes-literie-Matelas-Lux
 Gestion d'inventaire et commandes literie Matelas Lux
 
+
 Ce travail est un site de gestion de commandes pour un magasin de meubles. Il a été programmé par siphax en utilisant php et mysql en utilisant des modèles de démarrage, css et langage. JS.
 Un système de sécurité a été introduit pour le site afin que la connexion ne se fasse qu'à chaque fois qu'une SESSION variable est créée, en plus de cela, il contient 5 superviseurs qui peuvent être augmentés, et chaque superviseur a des autorisations différentes de l'autre, afin de changer ils peuvent être personnalisés.
 Des mises à jour seront publiées de temps à autre, le site est open source, mais la base de données ne l'est pas. Open source, si vous êtes intéressé par le développement du projet, contactez-moi et je serai très heureux de vous envoyer la base de données.
