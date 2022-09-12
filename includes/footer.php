@@ -28,10 +28,10 @@
                     </div>
                 </div>
                 <div class="col-6 col-md d-print-none ">
-                    <h5>Características</h5>
+                    <h5>Services</h5>
                     <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Interrisant</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Fonctions</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="politiques.html">Portailles de travaille</a></li>
+                        <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Fonctions</a></li> -->
                         <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">función de equipo</a></li>
                         <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cosas para desarrolladores</a></li>
                         <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Otro</a></li>
@@ -41,8 +41,8 @@
                 <div class="col-6 col-md d-print-none ">
                     <h5>Recursos</h5>
                     <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Recours</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Recourso</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="politiques.html">Politique de Retour</a></li>
+                        <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Recourso</a></li> -->
                         <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Otro recurso</a></li> -->
                         <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Ultimo recurso</a></li> -->
                     </ul>
@@ -50,8 +50,8 @@
                 <div class="col-6 col-md d-print-none ">
                     <h5>Sobre Nosotros</h5>
                     <ul class="list-unstyled text-small">
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Equipes</a></li>
-                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Location</a></li>
+                        <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Equipes de travaille</a></li> -->
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://maps.app.goo.gl/iDiRRduRqZRG1qoN8">Location</a></li>
                         <!-- <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
                         <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Condiciones</a></li> -->
                     </ul>

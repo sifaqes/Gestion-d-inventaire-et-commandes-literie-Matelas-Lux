@@ -58,7 +58,11 @@ if (login_check($mysqli) == true) {
         <p>Vous êtes actuellement connecté <?php echo $logged ?>.</p>
 
         
-      
+      <?php 
+
+      require_once'includes/footer.php';
+
+      ?>
     </body>
 </html>
 
