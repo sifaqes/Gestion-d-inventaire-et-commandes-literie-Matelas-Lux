@@ -439,9 +439,6 @@ echo '
 ?>
 
 
-<?php   
-require_once('graphique.php');
-?>
 
 
 <?php require_once'includes/footer.php'; ?>
