@@ -285,6 +285,8 @@ function admin2() {
     ';
 }
 function admin3() {
+
+
   $hostname = 'localhost';
   $database = 'lux';
   $username = 'root';
