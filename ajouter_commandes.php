@@ -22,7 +22,7 @@ sec_session_start();
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="720">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://crm.elbossinmobiliaria.com">
+        <meta property="og:url" content="https://crm.elbossinmobiliaria.es">
         <meta property="fb:app_id" content="xxxxxxxxxxxxxxxxxxxx">
 
         <!-- BOOTSTRAP -->
@@ -31,7 +31,26 @@ sec_session_start();
     <body>
         <?php if (login_check($mysqli) == true) : ?>
 <!-- ---------------------------------STAR PROGRAM--------------------------------- -->
-<?php require_once'includes/header.php'; ?>
+<?php 
+//HEADER Acces Administrateur 
+require_once'includes/psl-config.php';
+$access  = htmlentities($_SESSION['username']);
+if ($access === $Admin1 ) {
+  admin1();
+}elseif ($access === $Admin2) {
+  admin2();
+}elseif ($access === $Admin3) {
+  admin3();
+}elseif ($access === $Admin4) {
+  admin4();
+}elseif ($access === $Admin5) {
+  admin5();
+}elseif ($access === $Admin6) {
+  admin1();
+}else {
+  require_once'includes/header.php'; 
+}
+?>
 <h4 class="container">Nouvelle Commande de <?php echo htmlentities($_SESSION['username'])?></h4>
 
 
@@ -42,7 +61,7 @@ if (isset($_POST['ajouter'])) {
 
     $userid = htmlentities($_SESSION['username']);
 //     system de security only Admins can add items
-    if ($userid === $Admin1 or $userid === $Admin2 or $userid === $Admin3 or $userid === $Admin4 or $userid === $Admin5 ) {
+    if ($userid === $Admin1 or $userid === $Admin2 or $userid === $Admin3 or $userid === $Admin4 or $userid === $Admin5 or $userid === $Admin6) {
         
 
         // قي حالة الطلب لاول مره فانه يزود القيمة rol بعدد اولي 1
@@ -58,7 +77,7 @@ if (isset($_POST['ajouter'])) {
     $indi = openssl_encrypt($_POST['indi'],$crypting,$key,0,$iv);
     $tel = openssl_encrypt($_POST['tel'],$crypting,$key,0,$iv);
     $email = openssl_encrypt($_POST['email'],$crypting,$key,0,$iv);
-    $fecha = date ("Y-m-d");
+    $fecha = date ('y-m-d');
     
 //     $fecha = openssl_encrypt('2022-04-15',$crypting,$key,0,$iv);
     $dir = openssl_encrypt($_POST['dir'],$crypting,$key,0,$iv);
@@ -109,16 +128,30 @@ if (isset($_POST['ajouter'])) {
     $AjouterCommande->bindParam("cupon",$cupon);
 
     if($AjouterCommande->execute()){
-        echo '
-                <div class=" mt-2 alert alert-success container" role="alert">
-                    Nouvelle Commande a ete Ajouter&nbsp;!
-                </div>';
+        // echo '
+        //         <div class=" mt-2 alert alert-success container" role="alert">
+        //                 nouvelle commande a été Ajouter&nbsp;!
+        //         </div>';
         // SCRIPT EMAIL///////////////////////////////
         require_once 'mail.php';
         require_once 'includes/psl-config.php';
-                // $mail->addAddress($_SESSION['user']->EMAIL);
-                $mail->addAddress($emailhosting);
-                $mail->Subject = "Nouvell Commande par ".$user."";
+
+                $mail->addAddress($emailAdmin3);
+                $mail->addCC($emailAdmin5);
+
+                $usermail = htmlentities($_SESSION['username']);
+                $admin_mail = $database->prepare("SELECT * FROM members where username = :username ");
+                $admin_mail->bindParam("username",$usermail);
+                if($admin_mail->execute()){
+                        foreach($admin_mail AS $get_mail){
+                        $mail->addBCC($get_mail['email']);
+                        echo'<div class=" mt-2 alert alert-success container" role="alert">
+                        nouvelle commande a été Ajouter&nbsp;!&nbsp;un&nbsp;email&nbsp;a&nbsp;été&nbsp;envoyer&nbsp;a&nbsp;'.$get_mail['email'].'&nbsp;!
+                         </div>';
+                        }}
+
+                
+                $mail->Subject = "Nouvell Commande Matelas par::".$user."";
                 $mail->Body = '<div> 
                 <div style="text-align: center;">
                         <h1>Une ommande '.$_POST['statue'].'</h1>
@@ -135,17 +168,28 @@ if (isset($_POST['ajouter'])) {
                         <li style="">Prix&nbsp;'.$_POST['prix'].'.00 DZD</li>
                 <h3>Merci&nbsp;'.$user.'</h3>
                 </div>';
-                $mail->setFrom("matelaslux@elbossinmobiliaria.es", "Matelaslux");
-                $mail->send();
+                $mail->setFrom($mailsender, "NEW ORDRE::MATELASLUX");
+
+                
+                if ($mail->send()) {
+                        echo'<div class=" mt-2 alert alert-success container" role="alert">
+                        Un Email a ete envoyer a '.$emailAdmin3.'&nbsp;!&nbsp;et&nbsp;'.$emailAdmin5.'&nbsp;!
+                        </div>';
+                        // require_once './adminmail.php';
+                }else {
+                        echo'<div class=" mt-2 alert alert-danger container" role="alert">
+                             EMAIL SEND FAIL '.$emailAdmin3.'&nbsp;!
+                        </div>';
+                }
 
 
                 // header  refresh ----------------------------------------------------------
                 header("location:protected_page.php",true);
 
-        echo '
-                <div class=" mt-2 alert alert-success container" role="alert">
-                    Un Email a ete envoyer a '.$emailhosting.'&nbsp;!
-                </div>';
+        // echo '
+        //         <div class=" mt-2 alert alert-success container" role="alert">
+        //             Un Email a ete envoyer a '.$emailAdmin3.'&nbsp;!
+        //         </div>';
 
         }else {
             echo '
@@ -176,6 +220,7 @@ if (isset($_POST['ajouter'])) {
                                 <li class="nav-item">Non Conferme&nbsp;
                                 <a class="btn btn-outline-dark" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16"><path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.378 1.378 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51.136.02.285.037.443.051.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.896 1.896 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2.094 2.094 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.162 3.162 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.823 4.823 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591z"/></svg></a>
                                 &nbsp;</li>
+                                
                                 <li class="nav-item">Expédié&nbsp;
                                 <a class="btn btn-outline-info" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/></svg></a>
                                 &nbsp;</li>
@@ -213,7 +258,7 @@ if (isset($_POST['ajouter'])) {
                                                 $valorFinal = $getRol['rol'];
                 ?>  
                                                 <!-- <label  class="form-label"><?php // echo 'CODE:'.$valorFinal ?></label> -->
-                                                        <input name="rol" class="form-control" type="number" placeholder="كود الطلبية" value="<?php echo $valorFinal; ?>" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" required>
+                                                        <input name="rol" class="form-control" type="number" placeholder="كود الطلبية" value="<?php echo $valorFinal; ?>" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"  required>
                                                         <?php 
                                 
                         
@@ -231,9 +276,9 @@ if (isset($_POST['ajouter'])) {
                                 <select name="statue" class="form-select btn-outline-danger"  required>
                                         <option value="Conferme">Conferme</option>
                                         <option value="Non Confermer">Non Confermer</option>
-                                        <option value="Expédié">Expédié</option>
+                                        <!-- <option value="Expédié">Expédié</option>
                                         <option value="Livré">Livré</option>
-                                        <option value="Annuler">Annuler</option>
+                                        <option value="Annuler">Annuler</option> -->
                                         
                                 </select>
                         </div>
@@ -271,16 +316,16 @@ if (isset($_POST['ajouter'])) {
 
                     <div class="col-sm-2">
                             <!-- <label  class="form-label">Numero*</label> -->
-                            <input name="bat" class="form-control"  type="text" placeholder="رقم المنزل"  />
+                            <input name="bat" class="form-control"  type="text" placeholder="رقم المنزل"  disabled/>
                     </div>
 
                     <div class="col-sm-2">
                             <!-- <label  class="form-label">Porte</label> -->
-                            <input name="port" class="form-control"  type="text" placeholder="الطابق او رقم الباب"  />
+                            <input name="port" class="form-control"  type="text" placeholder="الطابق او رقم الباب"  disabled/>
                     </div>
                     <div class="col-sm-2">
                             <!-- <label  class="form-label">Ville*</label> -->
-                            <input name="ville" class="form-control"  type="text" placeholder="المدينة"  />
+                            <input name="ville" class="form-control"  type="text" placeholder="المدينة"  disabled/>
                     </div>
                     <div class="col-sm-6">
                             <!-- <label  class="form-label">Wilaya*</label> -->
@@ -347,7 +392,7 @@ if (isset($_POST['ajouter'])) {
                 </div>
                 <div class="col-sm-3">
                         <!-- <label  class="form-label">Livraison</label> -->
-                        <input name="liv" type="number" class="form-control"  placeholder="سعر الشحن"  >
+                        <input name="liv" type="text" class="form-control disabled"  placeholder="سعر الشحن" disabled >
                 </div>
                 <div class="col-sm-3">
                         <!-- <label  class="form-label">Coupons</label> -->
@@ -361,7 +406,7 @@ if (isset($_POST['ajouter'])) {
 
 
                     <div class="col-sm-12">
-                            <textarea dir="rtl"  name="text"  class="form-control mt-1 mb-1" rows="4" placeholder="Discripcion" >لا يوجد ملاحضة</textarea>
+                            <textarea dir="rtl"  name="text"  class="form-control mt-1 mb-1" rows="8" placeholder="Discripcion" >لا يوجد ملاحظة</textarea>
                     </div>
                     <!-- -------------------------Button ajouter--------------------------------- -->
                     <!-- <hr class="my-4">                       -->
@@ -378,7 +423,7 @@ if (isset($_POST['ajouter'])) {
 <!-- ---------------------------------END PROGRAM--------------------------------- -->
         <?php else : ?>
             <p>
-                <span class="error">You are not authorized to access this page.</span> Please <a href="index.php">login</a>.
+                <span class="error">Vous n'êtes pas autorisé à accéder à cette page.</span> Please <a href="index.php">login</a>.
             </p>
         <?php endif; ?>
     </body>

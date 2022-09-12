@@ -1,3 +1,4 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <?php
 $error = filter_input(INPUT_GET, 'err', $filter = FILTER_SANITIZE_STRING);
 
@@ -6,30 +7,19 @@ if (! $error) {
 }
 ?>
 <!DOCTYPE html>
-<!--
-Copyright (C) 2013 peter
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Secure Login: Error</title>
+        <title>Matealslux - <?php echo $error; ?></title>
         <link rel="stylesheet" href="styles/main.css" />
     </head>
-    <body class=" container">
-        <h1>There was a problem</h1>
-        <p class="error"><?php echo $error; ?></p>  
+    <body class="container mt-3">      
+    <?php
+        echo'
+        <div class="alert alert-danger" role="alert">
+        <h1>Il y avait un problème</h1> '.$error.'!</div>';
+        
+        ?> 
     </body>
 </html>

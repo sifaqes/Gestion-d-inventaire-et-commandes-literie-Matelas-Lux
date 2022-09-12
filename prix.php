@@ -31,13 +31,33 @@ sec_session_start();
     <body>
         <?php if (login_check($mysqli) == true) : ?>
 <!-- ---------------------------------STAR PROGRAM--------------------------------- -->
-<?php require_once'includes/header.php'; ?>
-<?php require_once'includes/psl-config.php'; ?>
+<?php 
+//HEADER Acces Administrateur 
+require_once'includes/psl-config.php';
+$access  = htmlentities($_SESSION['username']);
+if ($access === $Admin1 ) {
+  admin1();
+}elseif ($access === $Admin2) {
+  admin2();
+}elseif ($access === $Admin3) {
+  admin3();
+}elseif ($access === $Admin4) {
+  admin4();
+}elseif ($access === $Admin5) {
+  admin5();
+}elseif ($access === $Admin6) {
+  admin1();
+}else {
+  require_once'includes/header.php'; 
+}
+?>
+
+
 <h4 class="mb-3 container">Les Prix</h4>
 <?php
 // Acces Administrateur 
 $access  = htmlentities($_SESSION['username']);
-if ($access === $Admin3 or $access === $Admin4 or  $access === $Admin5 ) {
+if ($access === $Admin1 or $access === $Admin2) {
 ?>
 <div class="container" >
 

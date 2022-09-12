@@ -16,9 +16,10 @@ if (login_check($mysqli) == true) {
     <head>
         <title>Matelas lux Gestion des commandes</title>
                 <!-- Icon de main:apple windows android -->
-                <link rel="icon" href="imgs\icon.png">
+        <link rel="icon" href="imgs\icon.png">
         <link rel="shortcut" href="imgs\icon.png">
         <link rel="apple-touche-icon" href="imgs\icon.png">
+        <meta name="viewport" content="initial-scale=1">
 
         <!-- SEO TAG FACEBOOK -->
         <meta property="og:title" content="Gestion Matelaslux">
@@ -42,18 +43,22 @@ if (login_check($mysqli) == true) {
             echo '<p class="error">Error Logging In!</p>';
         }
         ?> 
-              <h1>Mon compte</h1>
+              <h1>Matelaslux 🔒</h1>
         <form action="includes/process_login.php" method="post" name="login_form"> 			
             Email: <input  class="form-control" type="text" name="email" />
-            Password: <input class="form-control"  type="password" 
+            Mot de passe: <input class="form-control"  type="password" 
                              name="password" 
                              id="password"/>
             <input type="button" class="btn btn-outline-warning  mt-2"
                    value="Login" 
                    onclick="formhash(this.form, this.form.password);" /> 
         </form>
-        <p>If you don't have a login, please <a href="register.php">register</a></p>
-        <p>If you are done, please <a href="includes/logout.php">log out</a>.</p>
-        <p>You are currently logged <?php echo $logged ?>.</p>
+        <p>Si vous n'avez pas de login, veuillez <a href="register.php">register</a></p>
+        <p>Si vous avez terminé, veuillez <a href="includes/logout.php">log out</a>.</p>
+        <p>Vous êtes actuellement connecté <?php echo $logged ?>.</p>
+
+        
+      
     </body>
 </html>
+

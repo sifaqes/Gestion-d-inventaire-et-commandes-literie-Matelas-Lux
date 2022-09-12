@@ -1,3 +1,4 @@
+
 <header class="p-3 mb-3 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -6,11 +7,17 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="protected_page.php" class="nav-link px-2 link-dark">Commandes</a></li>
-          <li><a href="ajouter_commandes.php" class="nav-link px-2 link-dark">Ajouter</a></li>
-          <li><a href="recherche.php" class="nav-link px-2 link-dark">Recherche</a></li>
-          <li><a href="prix.php" class="nav-link px-2 link-dark">Prix</a></li>
-          <li><a href="#" class="nav-link px-2 link-dark disabled" ><sub>Inventaire</sub></a></li>
+
+        
+
+            <li><a href="protected_page.php" class="nav-link px-2 link-dark">Commandes</a></li>
+            <li><a href="ajouter_commandes.php" class="nav-link px-2 link-dark">Ajouter</a></li>
+            <li><a href="confirmation_expedition.php" class="nav-link px-2 link-dark">Confirmation</a></li>
+            <li><a href="Expedition.php" class="nav-link px-2 link-dark">Expedition</a></li>
+            
+            <li><a href="recherche.php" class="nav-link px-2 link-dark">Recherche</a></li>
+            <!-- <li><a href="prix.php" class="nav-link px-2 link-dark">Prix</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark disabled" ><sub>Inventaire</sub></a></li> -->
         </ul>
 
         <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" method="POST">
