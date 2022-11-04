@@ -3,14 +3,30 @@
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////  LOCALHOST ///////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        define("HOST", "localhost"); 			// The host you want to connect to. 
-        define("USER", "root"); 			// The database username. 
-        define("PASSWORD", ""); 	// The database password. 
-        define("DATABASE", "lux");             // The database name.
-        $hostname = 'localhost';
-        $database = 'lux';
-        $username = 'root';
-        $password = '';
+        // define("HOST", "localhost"); 			// The host you want to connect to. 
+        // define("USER", "root"); 			// The database username. 
+        // define("PASSWORD", ""); 	// The database password. 
+        // define("DATABASE", "lux");             // The database name.
+        // $hostname = 'localhost';
+        // $database = 'lux';
+        // $username = 'root';
+        // $password = '';
+        // $database = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
+
+
+
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////// WEB HOSTING  /////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        define("HOST", "db5007270364.hosting-data.io"); 			// The host you want to connect to. 
+        define("USER", "dbu482015"); 			// The database username. 
+        define("PASSWORD", "NFsUi2da@p#J6yL"); 	// The database password. 
+        define("DATABASE", "dbs5992035");             // The database name.
+        $hostname = 'db5007270364.hosting-data.io';
+        $database = 'dbs5992035';
+        $username = 'dbu482015';
+        $password = 'NFsUi2da@p#J6yL';
         $database = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
 
 
@@ -25,7 +41,7 @@
         $url = "https://matelaslux.elbossinmobiliaria.es/";
 
         // EMAIL SENDER SERVER
-        $mailsender = "contact@matelaslux.com";
+        $mailsender = "siphaxzer@gmail.com";
 
 
 // DOSSIER IMAGES
@@ -54,7 +70,7 @@
         
         $Admin1='KH1';
         $Whatsapp1='+213796383708';
-        $emailAdmin1 = 'zs7@gcloud.ua.es';
+        $emailAdmin1 = 'siphaxzer@gmail.com';
 
         $Admin2='KH2';
         $Whatsapp2='+213672249438';
@@ -62,7 +78,7 @@
 
         $Admin3='SF';
         $Whatsapp3='+34658629772';
-        $emailAdmin3 = 'zs7@gcloud.ua.es';
+        $emailAdmin3 = 'siphaxzer@gmail.com';
 
         $Admin4='YOUVA';
         $Whatsapp4='+213557828839';
@@ -80,7 +96,7 @@
 /////////////////////////////////////////////////// Estado shipping  ////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
           
-        $Estado1 = 'Non Confermer';
+        $Estado1 = 'Pas Confermer';
         $Estado2 = 'Conferme';
         $Estado3 = 'Expédié';
         $Estado4 = 'Livré';
