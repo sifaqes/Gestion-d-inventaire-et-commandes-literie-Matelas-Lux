@@ -5,8 +5,8 @@
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         define("HOST", "localhost"); 			// The host you want to connect to. 
         define("USER", "root"); 			// The database username. 
-        define("PASSWORD", ""); 	// The database password. 
-        define("DATABASE", "lux");             // The database name.
+        define("PASSWORD", ""); 	                // The database password. 
+        define("DATABASE", "lux");                      // The database name.
         $hostname = 'localhost';
         $database = 'lux';
         $username = 'root';
