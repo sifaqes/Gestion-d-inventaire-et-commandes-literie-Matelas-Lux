@@ -3,6 +3,10 @@ include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
 
 sec_session_start();
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -146,12 +150,12 @@ if (isset($_POST['ajouter'])) {
                         foreach($admin_mail AS $get_mail){
                         $mail->addBCC($get_mail['email']);
                         echo'<div class=" mt-2 alert alert-success container" role="alert">
-                        nouvelle commande a été Ajouter&nbsp;!&nbsp;un&nbsp;email&nbsp;a&nbsp;été&nbsp;envoyer&nbsp;a&nbsp;'.$get_mail['email'].'&nbsp;!
+                        Nouvelle commande a été Ajouter&nbsp;!&nbsp;un&nbsp;email&nbsp;a&nbsp;été&nbsp;envoyer&nbsp;a&nbsp;'.$get_mail['email'].'&nbsp;!
                          </div>';
                         }}
 
                 
-                $mail->Subject = "Nouvell Commande Matelas par::".$user."";
+                $mail->Subject = "New Order Matelaslux Of ".$user.", Date: ".$fecha;
                 $mail->Body = '<div> 
                 <div style="text-align: center;">
                         <h1>Une ommande '.$_POST['statue'].'</h1>
@@ -167,14 +171,21 @@ if (isset($_POST['ajouter'])) {
                         <li style="">Commande&nbsp;'.$_POST['tipo'].'&nbsp;'.$_POST['dim'].'&nbsp;'.$_POST['hut'].'&nbsp;'.$_POST['dir'].'den</li>
                         <li style="">Prix&nbsp;'.$_POST['prix'].'.00 DZD</li>
                 <h3>Merci&nbsp;'.$user.'</h3>
-                </div>';
+                </div>
+                ';
                 $mail->setFrom($mailsender, "NEW ORDRE::MATELASLUX");
+                $mail->addAttachment('/Gestion-d-inventaire-et-commandes-literie-Matelas-Lux\README.md', 'new.md');
 
-                
                 if ($mail->send()) {
                         echo'<div class=" mt-2 alert alert-success container" role="alert">
                         Un Email a ete envoyer a '.$emailAdmin3.'&nbsp;!&nbsp;et&nbsp;'.$emailAdmin5.'&nbsp;!
-                        </div>';
+                        </div>
+
+
+
+                        <script src="js/jspdf.min.js"> </script>
+                        <script src="js/index.js"> </script>
+                        ';
                         // require_once './adminmail.php';
                 }else {
                         echo'<div class=" mt-2 alert alert-danger container" role="alert">
@@ -194,7 +205,7 @@ if (isset($_POST['ajouter'])) {
         }else {
             echo '
                     <div class=" mt-2  alert alert-success container" role="alert">
-                    Il a un Erreur de base de donnes!
+                    Erreur de base de donnes!
                     </div>';  
                     header("location:ajouter_commandes.php",true);
         }
@@ -287,9 +298,9 @@ if (isset($_POST['ajouter'])) {
                     <!-- <hr class="my-4"> -->
                     <!-- ------------------------------------------------------------------------ -->
 
-                    <div  class="col-sm-5">
+                    <div  class="col-sm-5" id="name">
                             <!-- <label  class="form-label">Nom Prenom*</label> -->
-                            <input name="nom" class="form-control"  type="text"  placeholder="الاسم و اللقب*" required> 
+                            <input  name="nom" class="form-control"  type="text"  placeholder="الاسم و اللقب*" required> 
                     </div>
                     <div  class="col-sm-1">
                             <!-- <label  class="form-label">Indicateur*</label> -->
@@ -411,9 +422,9 @@ if (isset($_POST['ajouter'])) {
                     <!-- -------------------------Button ajouter--------------------------------- -->
                     <!-- <hr class="my-4">                       -->
                     <!-- ------------------------------------------------------------------------ -->
-                    <button name="ajouter" type="submit" class="w-100 btn btn-outline-success btn-lg" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+                    <button name="ajouter" type="submit" class="w-100 btn btn-outline-success btn-lg" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
                         <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
-                        </svg>&nbsp;Ajouter une commande
+                        </svg>&nbsp;Ajouter la  commande
                     </button>
                 </div>         
             </div>
@@ -426,6 +437,8 @@ if (isset($_POST['ajouter'])) {
                 <span class="error">Vous n'êtes pas autorisé à accéder à cette page.</span> Please <a href="index.php">login</a>.
             </p>
         <?php endif; ?>
+
+
     </body>
    
 </html>

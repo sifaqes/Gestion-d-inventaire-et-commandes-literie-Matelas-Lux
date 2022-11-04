@@ -285,6 +285,8 @@ function admin2() {
     ';
 }
 function admin3() {
+
+  // include_once 'psl-config.php';
   // $hostname = 'db5007270364.hosting-data.io';
   // $database = 'dbs5992035';
   // $username = 'dbu482015';
@@ -296,6 +298,7 @@ function admin3() {
   $password = '';
   $database = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
   $statue =  openssl_encrypt('Conferme','AES-256-CBC','siphax',0,'1234567812345678');
+
   $listexpedition = $database->prepare("SELECT * FROM commandes WHERE statue = :statue ");
   $listexpedition -> bindParam("statue",$statue);
   if($listexpedition->execute()){
