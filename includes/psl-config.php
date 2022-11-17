@@ -19,15 +19,6 @@
 /////////////////////////////////////////////////// WEB HOSTING  /////////////////////////////////////////////////
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        // define("HOST", "db5007270364.hosting-data.io"); 			// The host you want to connect to. 
-        // define("USER", "dbu482015"); 			// The database username. 
-        // define("PASSWORD", "NFsUi2da@p#J6yL"); 	// The database password. 
-        // define("DATABASE", "dbs5992035");             // The database name.
-        // $hostname = 'db5007270364.hosting-data.io';
-        // $database = 'dbs5992035';
-        // $username = 'dbu482015';
-        // $password = 'NFsUi2da@p#J6yL';
-        // $database = new PDO("mysql:host=$hostname;dbname=$database;charset=utf8",$username,$password);
 
 
 
